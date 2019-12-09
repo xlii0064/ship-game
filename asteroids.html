@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <style>
+        @import url(style.css);
+
+        p.highlight {
+            color: red;
+        }
+
+        svg {
+            background-color: rgb(41, 41, 36);
+        }
+    </style>
+    <script src="svgelement.js"></script>
+    <script src="observable.js"></script>
+    <script src="asteroids.js"></script>
+</head>
+
+<body>
+    <h1>Asteroids</h1>
+    <h2>
+        Instructions on how to play:<br>
+        "w" for moving forward, "r" for rotating and "space" for shooting<br>
+        30 seconds later the game would switch to the difficult mode and there will be an asteroid defender. If it hits
+        your ship, your ship would be destroyed and the game ends.<br>
+        The defender is unbeatable and it will try to generate a fence to destroy your ship. Be careful! See the
+        features below the canvas!
+
+    </h2>
+    <h3 id="life">
+        life:3
+    </h3>
+    <h4 id="marks">
+        Points: 0
+
+    </h4>
+    <svg id="canvas" width="600" height="600" />
+    <h5>
+        At the begining of each game, the player would have 3 lives and 0 score. The ship's movement is depending on the
+        thrust, so even if the player didn't do
+        anything, it will still move towards the direction of the head of the ship at a really low speed. Crashing by
+        asteroids or the bullets from the enemy will
+        only cost 1 life of the ship, but colliding with the asteroids' defender (i.e the red enemy ship) will end the
+        game immediately.<br>
+        The game has 2 levels, and there's no winning condition. The only goal for the palyer is to gain more scores and
+        survive longer. So after the player's ship has
+        survived 30 seconds, an enemy ship would appear and swith the game to the hard level. The enemy ship would
+        generate a red fence (i.e the red line on the canvas)
+        that can cost a life of the player's ship. Trying to shoot the enemy is useless as it is unbeatable therefore
+        the player has to hide from the enemy and its fence.<br>
+        About how to gain marks: Hitting the light yellow asteroids would not destroy them for good, but the player can
+        still gain 15 marks for each success. After the
+        larger asteroids were destroyed, it will split into 2 and the smaller ones would be faster and harder to aim. A
+        success in destroying the smaller ones wil give
+        the player 30 marks as it is much harder than destroying the big ones. Only destroying asteroids can increase
+        the player's score.
+    </h5>
+</body>
+
+</html>
